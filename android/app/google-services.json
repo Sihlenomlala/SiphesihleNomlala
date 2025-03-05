@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "879781553960",
+    "project_id": "realtimesmss",
+    "storage_bucket": "realtimesmss.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879781553960:android:8c4d78ad52f9a87d5d921d",
+        "android_client_info": {
+          "package_name": "com.example.realtimesmss"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABumpIR1SPRGjnfbNOgPwaGqeDskoT1Ag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

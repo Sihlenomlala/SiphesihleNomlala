@@ -1,0 +1,5 @@
+package com.example.realtimesmss
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
