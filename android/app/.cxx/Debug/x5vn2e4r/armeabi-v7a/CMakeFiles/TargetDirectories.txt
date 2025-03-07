@@ -1,0 +1,2 @@
+C:/Users/PNG/StudioProjects/realtimesms/realtimesmss/android/app/.cxx/Debug/x5vn2e4r/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/PNG/StudioProjects/realtimesms/realtimesmss/android/app/.cxx/Debug/x5vn2e4r/armeabi-v7a/CMakeFiles/rebuild_cache.dir
