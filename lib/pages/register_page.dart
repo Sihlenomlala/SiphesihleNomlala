@@ -6,7 +6,7 @@ import '../components/my_button.dart';
 import '../components/my_text_field.dart';
 
 class RegisterPage extends StatefulWidget {
-   final void Function()? onTap;
+  final void Function()? onTap;
   const RegisterPage({super.key, required this.onTap});
 
   @override
@@ -20,33 +20,32 @@ class _RegisterPageState extends State<RegisterPage> {
   final confirmPasswordController = TextEditingController();
 
   // sign up user
-  void signUp() async{
-    if (passwordController.text != confirmPasswordController.text){
-
+  void signUp() async {
+    if (passwordController.text != confirmPasswordController.text) {
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text("Password do not match"),
-          ),
-          );
+        const SnackBar(
+          content: Text("Password do not match"),
+        ),
+      );
       return;
     }
     // get auth service
-    final authService =
-    Provider.of <AuthService>(context, listen: false);
+    final authService = Provider.of<AuthService>(context, listen: false);
 
     try {
       await authService.signUpWithEmailAndPassword(
-          emailController.text,
+        emailController.text,
         passwordController.text,
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(e.toString()),
-          ),
+        SnackBar(
+          content: Text(e.toString()),
+        ),
       );
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child:  Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 50),
@@ -84,39 +83,35 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 10),
                 //password text field
                 MyTextField(
-                  controller: emailController,
+                  controller: passwordController,
                   hintText: "Password",
                   obscureText: true,
                 ),
                 const SizedBox(height: 25),
 
-                  //Confirm password text field
-            MyTextField(
-              controller: confirmPasswordController,
-              hintText: "Confirm a Password",
-              obscureText: true,
-            ),
+                //Confirm password text field
+                MyTextField(
+                  controller: confirmPasswordController,
+                  hintText: "Confirm a Password",
+                  obscureText: true,
+                ),
                 const SizedBox(height: 25),
                 //sign up button
                 MyButton(onTap: signUp, text: "Sign Up"),
 
                 const SizedBox(height: 25),
-                  // Not a member register now
-                  Row(
+                // Not a member register now
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                      const  Text("Already a member"),
-                       const SizedBox(width: 4),
-                       GestureDetector(
-                         onTap: widget.onTap,
-                          child: const Text(
-                            'Please log in',
+                    const Text("Already a member"),
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                        onTap: widget.onTap,
+                        child: const Text('Please log in',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                            )
-                        )
-
-                    ),
+                            ))),
                   ],
                 ),
                 //not a member ? pleas register
@@ -128,4 +123,3 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 }
-
